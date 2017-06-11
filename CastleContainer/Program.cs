@@ -59,7 +59,8 @@ namespace CastleContainer
         private static void ObjectType()
         {
             WindsorContainer container = new WindsorContainer();
-            container.Register(Component.For<Service4>().LifeStyle.Transient*/);
+            //it's singleton
+            container.Register(Component.For<Service4>()/*.LifeStyle.Transient*/);
             container.Register(Component.For<IReader>().ImplementedBy<FileReader>()/*.LifeStyle.Transient*/);
             var service = container.Resolve<Service4>();
             service.Read();
